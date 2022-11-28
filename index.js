@@ -1,4 +1,4 @@
-exports.csvtexttools = function(csvtext, outputFormat='json') {
+exports.csvtexttools = function(csvtext, outputFormat='json', tableName='') {
     let records = [];
     const data = csvtext.split('\n');
     let headers = []
@@ -61,7 +61,7 @@ exports.csvtexttools = function(csvtext, outputFormat='json') {
                  table += `${obj},`;
                  values += `'${records[i][obj]}',`;
           })
-          sql += `INSERT INTO ${table.slice(0,-1)} VALUES (${values.slice(0,-1)});`;
+          sql += `INSERT INTO ${tableName}(${table.slice(0,-1)}) VALUES (${values.slice(0,-1)});\n`;
         }
         return sql
     }else if(outputFormat === 'json'){

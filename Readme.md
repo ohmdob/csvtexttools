@@ -12,9 +12,11 @@
 
 ### output sql
 
-`const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'sql');`
+`const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'sql','test_tb');`
 
-// output INSERT INTO a,b,c VALUES ('1','2','3');INSERT INTO a,b,c VALUES ('4','5','6');
+// output INSERT INTO test_tb(a,b,c) VALUES ('1','2','3');
+
+INSERT INTO test_tb(a,b,c) VALUES ('4','5','6');
 
 ### output json
 
