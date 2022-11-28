@@ -14,16 +14,16 @@ exports.csvtexttools = function(csvtext, outputFormat='json', tableName='') {
         for(let i=0; i < dataList.length; i++){
         
             if(dataList[i].startsWith('"') && dataList[i].endsWith('"')) {
-                cols.push(dataList[i]);
+                cols.push(dataList[i].slice(1,-1));
                 temp = '';
                 skip = true;
             }
             else if(dataList[i].startsWith('"')){
-                temp += dataList[i]
+                temp += dataList[i].slice(1)
                 skip = false;
             }
             else if(dataList[i].endsWith('"')) {
-                temp += dataList[i]
+                temp += dataList[i].slice(0,-1)
                 cols.push(temp);
                 temp = '';
                 skip = true;
