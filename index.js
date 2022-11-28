@@ -1,6 +1,5 @@
 exports.csvtexttools = function(csvtext, outputFormat='json') {
     let records = [];
-    let arrays = [];
     const data = csvtext.split('\n');
     let headers = []
     if(data.length > 0){
@@ -56,14 +55,13 @@ exports.csvtexttools = function(csvtext, outputFormat='json') {
         console.log(records)
         let sql = '';
         for(let i = 0; i < records.length; i++){
-            let table = '';
-            let values = '';
-            console.log(JSON.stringify(records[i]))
-           Object.keys(records[i]).forEach(obj=> {
+          let table = '';
+          let values = '';
+          Object.keys(records[i]).forEach(obj=> {
                  table += `${obj},`;
                  values += `'${records[i][obj]}',`;
-           })
-           sql += `INSERT INTO ${table.slice(0,-1)} VALUES (${values.slice(0,-1)});`;
+          })
+          sql += `INSERT INTO ${table.slice(0,-1)} VALUES (${values.slice(0,-1)});`;
         }
         return sql
     }else if(outputFormat === 'json'){

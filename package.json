@@ -1,6 +1,6 @@
 {
   "name": "csvtexttools",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "lib for csv to sql, csv to json, csv to objects, csv to etc",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   ],
   "author": "ohm10513@gmail.com",
   "license": "MIT","bugs": {
-    "url": "https://github.com/monatheoctocat/ohmdob/issues"
+    "url": "https://github.com/ohmdob/csvtexttools/issues"
   },
   "homepage": "https://github.com/ohmdob/csvtexttools"
 }
