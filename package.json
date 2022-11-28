@@ -1,6 +1,6 @@
 {
   "name": "csvtexttools",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "lib for csv to sql, csv to json, csv to objects, csv to etc",
   "main": "index.js",
   "scripts": {

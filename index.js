@@ -59,7 +59,7 @@ exports.csvtexttools = function(csvtext, outputFormat='json', tableName='') {
           let values = '';
           Object.keys(records[i]).forEach(obj=> {
                  table += `${obj},`;
-                 values += `'${records[i][obj]}',`;
+                 values += `'${records[i][obj].replace(/\'/g,"''")}',`;
           })
           sql += `INSERT INTO ${tableName}(${table.slice(0,-1)}) VALUES (${values.slice(0,-1)});\n`;
         }
