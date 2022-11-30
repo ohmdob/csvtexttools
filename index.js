@@ -52,7 +52,6 @@ exports.csvtexttools = function(csvtext, outputFormat='json', tableName='') {
     }
     
     if(outputFormat === 'sql'){
-        console.log(records)
         let sql = '';
         for(let i = 0; i < records.length; i++){
           let table = '';
