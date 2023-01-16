@@ -16,23 +16,29 @@
 
 ### output sql
 
-`const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'sql','test_tb');`
+`const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'sql','test_tb', ['b']);`
 
-// output INSERT INTO test_tb(a,b,c) VALUES ('1','2','3');
+// output 
 
-INSERT INTO test_tb(a,b,c) VALUES ('4','5','6');
+INSERT INTO test_tb(a,b,c) VALUES ('1',1.2,'3');
+
+INSERT INTO test_tb(a,b,c) VALUES ('4',5,'6');
 
 ### output json
 
 `const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'json');`
 
-// output [{"a":"1","b":"2","c":"3"},{"a":"4","b":"5","c":"6"}]
+// output 
+
+[{"a":"1","b":"2","c":"3"},{"a":"4","b":"5","c":"6"}]
 
 ### output objects
 
 `const output = tools.csvtexttools("a,b,c\n1,2,3\n4,5,6",'objects');`
 
-// output [
+// output 
+
+[
     { a: "1", b: "2", c: "3" },
     { a: "4", b: "5", c: "6" }
 ]
